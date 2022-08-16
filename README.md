@@ -199,5 +199,49 @@ Writing superblocks and filesystem accounting information: done
 ![img.png](https://github.com/nalevov/DO-Netology-3.5/blob/main/%D0%A6%D0%B5%D0%BB%D0%BE%D1%81%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D1%84%D0%B0%D0%B9%D0%BB%D0%B0.png)
 
 
-  
+## 16. Используя pvmove, переместите содержимое PV с RAID0 на RAID1.
 
+### Решение
+
+Перемещаем содержимое PV с RAID0 на RAID1.
+
+![img.png](https://github.com/nalevov/DO-Netology-3.5/blob/main/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5.png)
+
+
+## 17. Сделайте `--fail` на устройство в вашем RAID1 md.
+
+### Решение
+
+Делаем --fail на устройство в RAID1 md `sudo mdadm /dev/md1 --fail /dev/sdb1`
+
+Получаем 
+```
+mdadm: set /dev/sdb1 faulty in /dev/md1
+```
+
+
+## 18. Подтвердите выводом `dmesg`, что RAID1 работает в деградированном состоянии.
+
+### Решение
+
+Подтверждаем, что RAID1 работает в деградированном состоянии командой `dmesg | grep md1`
+
+
+## 19. Протестируйте целостность файла, несмотря на "сбойный" диск он должен продолжать быть доступен:
+
+    ```bash
+    root@vagrant:~# gzip -t /tmp/new/test.gz
+    root@vagrant:~# echo $?
+    0
+    ```
+
+### Решение
+Повторно тестируем целостность файла
+![img.png](https://github.com/nalevov/DO-Netology-3.5/blob/main/%D0%A6%D0%B5%D0%BB%D0%BE%D1%81%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D1%84%D0%B0%D0%B9%D0%BB%D0%B02.png)
+
+
+## 20. Погасите тестовый хост, `vagrant destroy`
+
+### Решение
+
+Гасим хост `shutdown`, `vagrant destroy`
