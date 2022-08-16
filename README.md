@@ -43,6 +43,9 @@ Linux каждый файл имеет уникальный идентифика
 ### Решение
     
   Выполняем команду  `vagrant destroy`
+  
+  ![img.png](https://github.com/nalevov/DO-Netology-3.5/blob/main/Destroy.png)
+	
 	Заменяем все содержимое Vagrantfile приложенным
 	После запуска виртуальной машины командой `lsblk` проверяем диски
   
@@ -245,3 +248,5 @@ mdadm: set /dev/sdb1 faulty in /dev/md1
 ### Решение
 
 Гасим хост `shutdown`, `vagrant destroy`
+
+![img.png](https://github.com/nalevov/DO-Netology-3.5/blob/main/Destroy.png)
